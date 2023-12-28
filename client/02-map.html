@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const products = [
+            {title: 'Burger', price: 121},
+            {title: 'Pizza', price: 20}
+        ]
+        /*Se obtiene el elemento div con id = 'app' para irle añadiendo cada propiedad de cada
+        elemento que contiene los productos mediante un forEach, y se hace mediante una lista*/
+        const app = document.getElementById('app') 
+
+        /*Se usa map para transformar el array de productos a un elemento de HTML, es este caso,
+        una lista*/
+        const list = products.map(product => {
+            return `<li>${product.title} - ${product.price}</li>`
+        })
+        /*Como innerHTML recibe un string, se usa el método join que permite compactar todo lo de list
+        en un string*/
+        app.innerHTML = list.join('')
+    </script>
+</body>
+</html>
